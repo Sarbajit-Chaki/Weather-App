@@ -1,4 +1,4 @@
-const apiKey = "e49b34cd6bfdd4aca23b12c581b469f3"
+const apiKey = "e49b34cd6bfdd4aca23b12c581b469f3d"
 const apiURL = `https://api.openweathermap.org/data/2.5/weather?&appid=${apiKey}&units=metric`
 let response
 
@@ -67,7 +67,7 @@ async function main(){
         navigator.geolocation.getCurrentPosition(async (position)=>{  //Permision Allowed
             // console.log(position)
             //Try to access weather info by lat & long
-            let a = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=e49b34cd6bfdd4aca23b12c581b469f3&units=metric`)
+            let a = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`)
             response = await a.json()
             // console.log(response)
             await setWeather()
